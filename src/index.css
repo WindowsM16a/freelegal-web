@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: blue !important;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(23, 37, 84, 0.6); /* blue-950/60 */
+	border-radius: 4px;
+}
+
+/* Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(23, 37, 84, 0.6) transparent;
+}
