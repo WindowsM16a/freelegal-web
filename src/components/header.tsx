@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const header = () => {
+const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const toLogin = () => {
 		window.location.href = "/login";
@@ -15,7 +15,7 @@ const header = () => {
 
 	return (
 		<div className="w-screen">
-			<nav className="w-full h-16 bg-blue-900 text-white items-center justify-between flex px-8 lg:px-20 fixed top-0 left-0 z-50  shadow-[0_2px_3px_-1px_rgba(254,240,138,0.12)]">
+			<nav className="w-full h-16 bg-blue-900 text-white items-center justify-between flex px-8 lg:px-20 fixed top-0 left-0 z-50  shadow-[0_2px_3px_-1px_rgba(90,90,138,0.3)]">
 				<a href="/" className="text-xl font-bold">
 					<img src="/" alt="freelegal logo" />
 				</a>
@@ -28,36 +28,37 @@ const header = () => {
 
 				{/* Nav links (desktop) */}
 				<ul className="hidden md:flex gap-6 mr-4 items-center">
-					<button>Contact</button>
-					<button onClick={toLogin}>Login</button>
-					<button
-						onClick={toRegister}
-						className="w-fit px-4 h-9 bg-yellow-500 text-blue-950 font-medium rounded-md"
-					>
-						Register
-					</button>
+					<li>
+						<a href="/">Contact</a>
+					</li>
+					<li>
+						<a href="/login">Login</a>
+					</li>
+					<li>
+						<a
+							href="/register"
+							className="w-fit px-4 py-1.5 h-8 bg-yellow-500 text-blue-950 font-medium rounded-md"
+						>
+							Register
+						</a>
+					</li>
 				</ul>
 
 				{/* Nav links (mobile dropdown) */}
-				{isOpen && (
-					<ul className="absolute top-[2.55rem] left-0 w-full flex flex-col gap-4 px-8 py-4 border-none md:hidden z-50 bg-gray-300">
-						<button onClick={toLogin}>Login</button>
-						<button onClick={toRegister}>Register</button>
-						<button>Contact</button>
-					</ul>
-				)}
-				{/* 				
-				<ul className="btns flex gap-10">
-					<button onClick={toGoogle} className="">
-						Login
-					</button>
-					<button className="">Login</button>
-					<button className="">Login</button>
-				</ul>
-				<p>jvdv</p> */}
+				<div
+					className={`absolute top-[4rem] left-0 w-full flex flex-col gap-4 px-8 py-4 border-none md:hidden z-50 bg-blue-950/90 text-white font-medium transform transition-all duration-300 origin-top rounded-b-2xl border shadow-[-3px_3px_12px_rgba(0,0,0,0.2)] ${
+						isOpen
+							? "opacity-100 scale-y-100"
+							: "opacity-0 scale-y-0 pointer-events-none"
+					}`}
+				>
+					<button onClick={toLogin}>Login</button>
+					<button onClick={toRegister}>Register</button>
+					<button>Contact</button>
+				</div>
 			</nav>
 		</div>
 	);
 };
 
-export default header;
+export default Header;

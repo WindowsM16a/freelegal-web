@@ -1,6 +1,65 @@
-import React from "react";
+// import React from "react";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Register = () => {
+	const location = useLocation();
+
+	useEffect(() => {
+		if (location.state?.from === "partner") {
+			console.log("Navigated from partner");
+			const lawFirm = document.getElementById(
+				"lawFirmRep"
+			) as HTMLInputElement | null;
+
+			if (lawFirm) lawFirm.checked = true;
+		}
+		if (location.state?.from === "heroReqAid") {
+			console.log("Legal aid request");
+			const requestAid = document.getElementById(
+				"client"
+			) as HTMLInputElement | null;
+
+			if (requestAid) requestAid.checked = true;
+		}
+		if (location.state?.from === "heroVolunteer") {
+			console.log("Legal aid request");
+			const requestAid = document.getElementById(
+				"studentOrManager"
+			) as HTMLInputElement | null;
+
+			if (requestAid) requestAid.checked = true;
+		}
+		if (location.state?.from === "whoSubmit") {
+			console.log("Legal aid request");
+			const requestAid = document.getElementById(
+				"client"
+			) as HTMLInputElement | null;
+
+			if (requestAid) requestAid.checked = true;
+		}
+		if (location.state?.from === "whoVolunteer") {
+			console.log("Legal aid request");
+			const requestAid = document.getElementById(
+				"studentOrManager"
+			) as HTMLInputElement | null;
+
+			if (requestAid) requestAid.checked = true;
+		}
+		if (location.state?.from === "whoFirm") {
+			console.log("Legal aid request");
+			const requestAid = document.getElementById(
+				"lawFirmRep"
+			) as HTMLInputElement | null;
+
+			if (requestAid) requestAid.checked = true;
+		}
+	}, [location]);
+
+	const handleRegistration = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+	};
+
 	return (
 		<>
 			<nav className="w-full h-16 bg-blue-900 text-white items-center justify-between flex px-8 lg:px-20 fixed top-0 left-0 z-50 ">
@@ -18,7 +77,10 @@ const Register = () => {
 							Enter your details to create your account
 						</p>
 					</div>
-					<form className="flex flex-col w-full gap-5">
+					<form
+						onSubmit={handleRegistration}
+						className="flex flex-col w-full gap-5"
+					>
 						<label
 							htmlFor="email"
 							className="flex flex-col gap-2.5 text-gray-600 font-medium"
@@ -28,7 +90,7 @@ const Register = () => {
 								type="name"
 								name="name"
 								placeholder="John Doe"
-								className="border-[0.7px] border-gray-300 rounded-md h-9 lg:h-10  px-3 font-normal text-black outline-[0.9px] outline-blue-800"
+								className="border-[0.7px] border-gray-300 rounded-md h-10 lg:h-10  px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
 							/>
 						</label>
 						<label
@@ -40,7 +102,7 @@ const Register = () => {
 								type="email"
 								name="email"
 								placeholder="name@example.com"
-								className="border-[0.7px] border-gray-300 rounded-md h-9 lg:h-10  px-3 font-normal text-black outline-[0.9px] outline-blue-800"
+								className="border-[0.7px] border-gray-300 rounded-md h-10 lg:h-10  px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
 							/>
 						</label>
 						<label
@@ -52,7 +114,7 @@ const Register = () => {
 								type="password"
 								name="password"
 								placeholder="eg: **********"
-								className="border-[0.7px] border-gray-300 rounded-md h-9 lg:h-10 px-3 font-normal text-black outline-[0.9px] outline-blue-800"
+								className="border-[0.7px] border-gray-300 rounded-md h-10 lg:h-10 px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
 							/>
 						</label>
 						<label
@@ -64,7 +126,8 @@ const Register = () => {
 								type="password"
 								name="password"
 								placeholder="eg: **********"
-								className="border-[0.7px] border-gray-300 rounded-md h-9 lg:h-10 px-3 font-normal text-black outline-[0.9px] outline-blue-800"
+								className="border-[0.3px] border-gray-300 rounded-md h-10 lg:h-10 px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800
+"
 							/>
 						</label>
 						<div
