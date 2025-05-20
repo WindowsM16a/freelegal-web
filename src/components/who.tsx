@@ -1,5 +1,3 @@
-import React from "react";
-
 import Card2 from "./ui/card2";
 
 const Who = () => {
