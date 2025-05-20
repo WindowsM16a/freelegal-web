@@ -15,7 +15,7 @@ const Card2 = ({
 	const handleClick = () => {
 		switch (buttonText.toLowerCase()) {
 			case "submit your case":
-				navigate("/register", { state: { from: "whoSubmit" } });
+				navigate("/submit", { state: { from: "whoSubmit" } });
 				break;
 
 			case "become a manager":
