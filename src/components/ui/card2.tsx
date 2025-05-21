@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Card2 = ({
@@ -15,7 +14,7 @@ const Card2 = ({
 	const handleClick = () => {
 		switch (buttonText.toLowerCase()) {
 			case "submit your case":
-				navigate("/register", { state: { from: "whoSubmit" } });
+				navigate("/submit", { state: { from: "whoSubmit" } });
 				break;
 
 			case "become a manager":

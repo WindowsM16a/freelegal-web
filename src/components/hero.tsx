@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
@@ -22,7 +21,7 @@ const Hero = () => {
 						className="w-[85%] flex flex-col justify-center gap-6 lg:w-full lg:gap-8"
 					>
 						<h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-white">
-							Justice is a right, not a privilege
+							Justice, Made Accessible
 						</h1>
 						<p className="text-base sm:text-lg md:text-lg font-semibold lg:text-xl lg:font-semibold text-white mb-4">
 							Get access to free legal support. No barriers. No fees.

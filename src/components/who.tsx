@@ -1,5 +1,3 @@
-import React from "react";
-
 import Card2 from "./ui/card2";
 
 const Who = () => {
@@ -26,17 +24,17 @@ const Who = () => {
 					className="w-full flex flex-col gap-12 lg:flex-row items-center"
 				>
 					<Card2
-						title="Submit Your Case"
+						title="Clients in Need"
 						subtitle="Tell us about your legal issue. We gather essential information to understand your needs."
 						buttonText="Submit Your Case"
 					/>
 					<Card2
-						title="Account Manager Review"
+						title="Law Students"
 						subtitle="Law student volunteers review your case and prepare it for matching with a law firm."
 						buttonText="Become a Manager"
 					/>
 					<Card2
-						title="Connect with Law Firms"
+						title="Law Firms"
 						subtitle="Law firms provide pro bono services for suitable cases and earn recognition."
 						buttonText="Join as a Firm"
 					/>
