@@ -7,6 +7,7 @@ import Hero from "../components/hero";
 import Submit from "../pages/submit";
 import AnonSubmit from "../pages/anonSubmit";
 
+
 const router = createBrowserRouter([
 	{
 		path: "/",
