@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+	const navigate = useNavigate();
 	const [isOpen, setIsOpen] = useState(false);
 	const toLogin = () => {
-		window.location.href = "/login";
+		navigate("/login");
 	};
 	const toRegister = () => {
-		window.location.href = "/register";
+		navigate("/register");
 	};
 	// const toContact = () => {
-	// 	window.location.href = "/contact";
+	// 	navigate("/contact")
 	// };
 
 	return (
