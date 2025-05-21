@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
 	const navigate = useNavigate();
@@ -18,9 +18,9 @@ const Header = () => {
 	return (
 		<div className="w-screen">
 			<nav className="w-full h-16 bg-blue-900 text-white items-center justify-between flex px-8 lg:px-20 fixed top-0 left-0 z-50  shadow-[0_2px_3px_-1px_rgba(90,90,138,0.3)]">
-				<a href="/" className="text-xl font-bold">
+				<Link to="/" className="text-xl font-bold">
 					<img src="/" alt="freelegal logo" />
-				</a>
+				</Link>
 				{/* Hamburger Icon (mobile) */}
 				<div className="md:hidden">
 					<button onClick={() => setIsOpen(!isOpen)}>
@@ -31,18 +31,18 @@ const Header = () => {
 				{/* Nav links (desktop) */}
 				<ul className="hidden md:flex gap-6 mr-4 items-center">
 					<li>
-						<a href="/">Contact</a>
+						<Link to="/">Contact</Link>
 					</li>
 					<li>
-						<a href="/login">Login</a>
+						<Link to="/login">Login</Link>
 					</li>
 					<li>
-						<a
-							href="/register"
+						<Link
+							to="/register"
 							className="w-fit px-4 py-1.5 h-8 bg-yellow-500 text-blue-950 font-medium rounded-md"
 						>
 							Register
-						</a>
+						</Link>
 					</li>
 				</ul>
 
