@@ -1,0 +1,64 @@
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+const Header = () => {
+	const [isOpen, setIsOpen] = useState(false);
+	const toLogin = () => {
+		window.location.href = "/login";
+	};
+	const toRegister = () => {
+		window.location.href = "/register";
+	};
+	// const toContact = () => {
+	// 	window.location.href = "/contact";
+	// };
+
+	return (
+		<div className="w-screen">
+			<nav className="w-full h-16 bg-blue-900 text-white items-center justify-between flex px-8 lg:px-20 fixed top-0 left-0 z-50  shadow-[0_2px_3px_-1px_rgba(90,90,138,0.3)]">
+				<a href="/" className="text-xl font-bold">
+					<img src="/" alt="freelegal logo" />
+				</a>
+				{/* Hamburger Icon (mobile) */}
+				<div className="md:hidden">
+					<button onClick={() => setIsOpen(!isOpen)}>
+						{isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+					</button>
+				</div>
+
+				{/* Nav links (desktop) */}
+				<ul className="hidden md:flex gap-6 mr-4 items-center">
+					<li>
+						<a href="/">Contact</a>
+					</li>
+					<li>
+						<a href="/login">Login</a>
+					</li>
+					<li>
+						<a
+							href="/register"
+							className="w-fit px-4 py-1.5 h-8 bg-yellow-500 text-blue-950 font-medium rounded-md"
+						>
+							Register
+						</a>
+					</li>
+				</ul>
+
+				{/* Nav links (mobile dropdown) */}
+				<div
+					className={`absolute top-[4rem] left-0 w-full flex flex-col gap-4 px-8 py-4 border-none md:hidden z-50 bg-blue-950/90 text-white font-medium transform transition-all duration-300 origin-top rounded-b-2xl border shadow-[-3px_3px_12px_rgba(0,0,0,0.2)] ${
+						isOpen
+							? "opacity-100 scale-y-100"
+							: "opacity-0 scale-y-0 pointer-events-none"
+					}`}
+				>
+					<button onClick={toLogin}>Login</button>
+					<button onClick={toRegister}>Register</button>
+					<button>Contact</button>
+				</div>
+			</nav>
+		</div>
+	);
+};
+
+export default Header;
