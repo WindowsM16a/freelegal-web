@@ -14,29 +14,77 @@ const FirmDashboard = () => {
 					<p className="text-slate-600">Browse and express interest in cases</p>
 				</div>
 				<div id="tab-container" className="tabContainer">
-					<input type="radio" name="caseTabs" id="availableCases" />
-					<label htmlFor="availableCases">
-						<div className="tabName peer-checked:bg-[var(--button-bg-color)] peer-checked:border peer-checked:border-[var(--button-border)] peer-checked:font-[560]">
-							<FileSearch className="w-5" />
+					<div>
+						<input
+							type="radio"
+							name="caseTabs"
+							id="availableCases"
+							className="peer"
+						/>
+
+						<label
+							htmlFor="availableCases"
+							className="tabName peer-checked:bg-white peer-checked:border peer-checked:shadow-[1px_0.5px_2px_rgba(0,0,0,0.1)]"
+						>
+							<FileSearch className="w-3.5 sm:w-4 md:5 lg:5" />
 							Available Cases
-						</div>
-						<div className="tabContent">
-							<div id="" className="um">
-								hj
+						</label>
+
+						<div className="tabContent peer-checked:opacity-100 peer-checked:z-10 opacity-0 z-0 bg-fuchsia-100">
+							<div className="caseTable overflow-x-auto">
+								<h2 className="text-2xl font-semibold">Available Cases</h2>
+								<div className="w-full overflow-x-auto">
+									<table className="bg-white mb-2 min-w-max">
+										<tr className="tableRow">
+											<th>ID</th>
+											<th>Title</th>
+											<th>Category</th>
+											<th>Date</th>
+											<th>Status</th>
+											<th>Actions</th>
+										</tr>
+										<tr className="tableRow">
+											<td>#1</td>
+											<td>Wrongful Eviction Case</td>
+											<td>Housing/Tenancy</td>
+											<td>2025-05-10</td>
+											<td>New</td>
+											<td>
+												<div className="flex">
+													<button className="w-fit flex">
+														<FileText /> View
+													</button>
+													<button>Withdraw</button>
+												</div>
+											</td>
+										</tr>
+									</table>
+								</div>
 							</div>
 						</div>
-					</label>
+					</div>
 
-					<input type="radio" name="caseTabs" id="interestedCases" />
-					<label htmlFor="interestedCases">
-						<div className="tabName peer-checked:bg-[var(--button-bg-color)] peer-checked:border peer-checked:border-[var(--button-border)] peer-checked:font-[560]">
-							<Briefcase className="w-5" />
+					<div>
+						<input
+							type="radio"
+							name="caseTabs"
+							id="interestedCases"
+							className="peer"
+						/>
+
+						<label
+							htmlFor="interestedCases"
+							className="tabName peer-checked:bg-white peer-checked:border peer-checked:shadow-[1px_0.5px_2px_rgba(0,0,0,0.1)]"
+						>
+							<Briefcase className="w-3.5 sm:w-4 md:5 lg:5" />
 							My Interested Cases
+						</label>
+
+						<div className="tabContent peer-checked:opacity-100 peer-checked:z-10 opacity-0 z-0">
+							<h2>Cases You've Expressed Interest In</h2>
+							<table></table>
 						</div>
-						<div className="tabContent">
-							<p>interested</p>
-						</div>
-					</label>
+					</div>
 				</div>
 			</div>
 		</>

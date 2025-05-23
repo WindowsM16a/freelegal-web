@@ -4,7 +4,7 @@
 
 @layer components {
 	.tabContainer {
-		@apply flex flex-wrap items-center justify-evenly mt-8 rounded-[1.6rem] border border-[var(--border-color)] p-[0.7rem_0] gap-4 max-w-[35rem] text-[var(--white)] relative;
+		@apply flex w-fit items-center justify-start mt-8 rounded-md bg-blue-200/10 border-2 border-blue-900/10 px-1.5 py-1.5 gap-3 relative text-xs sm:text-base md:text-base lg:text-base;
 	}
 
 	.tabContainer input {
@@ -12,18 +12,33 @@
 	}
 
 	.tabName {
-		@apply flex items-center gap-2 cursor-pointer px-[0.3rem] h-[1.7rem] rounded-[0.8rem] box-border font-medium transition-all duration-[60] ease-in-out;
+		@apply flex items-center gap-2 cursor-pointer h-[1.3rem] px-[1.2rem] py-[1.05rem] rounded-sm box-border font-semibold
+		transition-all duration-[50] ease-in-out;
 	}
 
 	.tabContent {
-		@apply flex flex-col items-center justify-between pl-[0.3rem] absolute top-[7rem] left-0 
-		bg-[var(--info-card-bg-color)] border border-[var(--border-color)] rounded-[1rem] 
-		w-[22.3rem] p-[0.7rem] opacity-0 z-0 transition-all duration-300 ease-in-out;
+		@apply flex flex-col min-w-[22.3rem] w-fit px-8 items-center justify-center absolute top-[7rem] left-0 
+		border-2 border-blue-900/10 rounded-md 
+		p-[0.7rem] opacity-0 z-0 transition-all duration-300 ease-in-out;
 	}
 
 	input:checked + label .tabContent {
 		@apply opacity-100 z-[1];
 	}
+
+	.tableRow {
+		@apply flex gap-12;
+	}
+}
+
+td,
+th {
+	border-style: solid;
+	border-color: #dddddd;
+	border-width: 0 1px 0 1px;
+
+	text-align: left;
+	padding: 2px;
 }
 
 body,
