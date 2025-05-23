@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
+import App from "../app";
 import NotFound from "../pages/404";
 import Login from "../pages/login";
 import Register from "../pages/register";
 import Hero from "../components/hero";
 import Submit from "../pages/submit";
 import AnonSubmit from "../pages/anonSubmit";
-import App from "../app";
-
+import FirmDashboard from "../pages/firmDashboard";
 
 const router = createBrowserRouter([
 	{
@@ -37,6 +37,11 @@ const router = createBrowserRouter([
 	{
 		path: "/anonsubmit",
 		element: <AnonSubmit />,
+		errorElement: <NotFound />,
+	},
+	{
+		path: "/firmdashboard",
+		element: <FirmDashboard />,
 		errorElement: <NotFound />,
 	},
 ]);
