@@ -1,4 +1,5 @@
-import { FileText, MessageSquare, FileSearch, Briefcase } from "lucide-react";
+import { FileText, FileSearch, Briefcase } from "lucide-react";
+// MessageSquare will be imported later
 
 const FirmDashboard = () => {
 	return (
