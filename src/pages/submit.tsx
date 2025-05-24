@@ -171,7 +171,7 @@ const Submit = () => {
 					</button>
 					<p className="text-sm text-slate-500">
 						Your information is kept confidential and will only be shared with
-						approved law firms and account managers.
+						approved legal representatives and account managers.
 					</p>
 					<p>
 						<span className="text-red-600">*</span> required field

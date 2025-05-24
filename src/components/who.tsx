@@ -30,13 +30,13 @@ const Who = () => {
 					/>
 					<Card2
 						title="Law Students"
-						subtitle="Law student volunteers review your case and prepare it for matching with a law firm."
+						subtitle="Law student volunteers review your case and prepare it for matching with a legal representative."
 						buttonText="Become a Manager"
 					/>
 					<Card2
-						title="Law Firms"
-						subtitle="Law firms provide pro bono services for suitable cases and earn recognition."
-						buttonText="Join as a Firm"
+						title="Legal Representatives"
+						subtitle="Legal Representatives provide pro bono services for suitable cases and earn recognition."
+						buttonText="Join as a Legal Representative"
 					/>
 				</div>
 			</div>

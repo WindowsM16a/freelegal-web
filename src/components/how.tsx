@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Card from "./ui/card";
 
 const How = () => {
@@ -31,18 +32,21 @@ const How = () => {
 					<Card
 						id="2"
 						title="Account Manager Review"
-						subtitle="Law student volunteers review your case and prepare it for matching with a law firm."
+						subtitle="Law student volunteers review your case and prepare it for matching with a legal representatives."
 					/>
 					<Card
 						id="3"
-						title="Connect with Law Firms"
-						subtitle="Law firms provide pro bono services for suitable cases and earn recognition."
+						title="Connect with Legal representatives"
+						subtitle="Legal representatives provide pro bono services for suitable cases and earn recognition."
 					/>
 				</div>
 				<div id="title" className=" my-12 text-center">
-					<button className="text-lg bg-blue-900 px-3.5 py-2 rounded-md text-white transition-colors duration-[300ms] shadow-[-3px_3px_12px_rgba(0,0,0,0.2)] hover:bg-blue-950 ease-in-out">
+					<Link
+						to="/register"
+						className="text-lg bg-blue-900 px-3.5 py-2 rounded-md text-white transition-colors duration-[300ms] shadow-[-3px_3px_12px_rgba(0,0,0,0.2)] hover:bg-blue-950 ease-in-out"
+					>
 						Get Started Today
-					</button>
+					</Link>
 				</div>
 			</div>
 		</div>
