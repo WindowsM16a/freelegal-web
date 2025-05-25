@@ -401,14 +401,11 @@ const Register = () => {
 									Individual
 								</label>
 							</div>
-							<div id="individualDiv" className="hidden">
-								<p>Placeholder</p>
-							</div>
-							<div id="firmNameDiv" className="hidden">
+							<div id="firmNameDiv" className="w-full hidden">
 								<label
 									htmlFor="firmName"
 									id="firmName"
-									className="flex flex-col gap-2.5 text-gray-600 font-medium"
+									className="flex flex-col gap-2.5 text-gray-600 font-medium w-full"
 								>
 									<span>
 										Firm Name <span className="text-red-600">*</span>
@@ -418,7 +415,7 @@ const Register = () => {
 										name="firmName"
 										id="firmName"
 										placeholder="eg: Pearson Hardmann"
-										className="border-[0.3px] border-gray-300 rounded-md h-10 lg:h-10 px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
+										className=" border-[0.3px] border-gray-300 rounded-md h-10 lg:h-10 px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
 									/>
 								</label>
 							</div>
