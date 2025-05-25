@@ -401,9 +401,6 @@ const Register = () => {
 									Individual
 								</label>
 							</div>
-							<div id="individualDiv" className="hidden">
-								<p>Placeholder</p>
-							</div>
 							<div id="firmNameDiv" className="w-full hidden">
 								<label
 									htmlFor="firmName"
