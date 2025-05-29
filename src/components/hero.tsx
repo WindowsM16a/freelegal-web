@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
 	const navigate = useNavigate();
 	const handleRequestAid = () => {
-		navigate("/register", { state: { from: "heroReqAid" } });
+		navigate("/submit", { state: { from: "heroReqAid" } });
 	};
 	const handleVolunteer = () => {
 		navigate("/register", { state: { from: "heroVolunteer" } });
