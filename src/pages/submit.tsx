@@ -76,7 +76,7 @@ const Submit = () => {
 							</button>
 						</div>
 					</div>
-					<div id="inputs" className="w-full flex flex-col gap-6 ">
+					<div id="inputs" className="w-full flex flex-col gap-4 ">
 						<label
 							htmlFor="caseTitle"
 							className="flex flex-col text-lg font-semibold gap-2"
@@ -92,6 +92,9 @@ const Submit = () => {
 								placeholder="Brief title describing your legal issue"
 								className="border border-slate-400/80 rounded-md text-base font-normal h-10 px-4   focus:outline focus:outline-slate-900"
 							/>
+							<p className="text-sm text-slate-600">
+								<span className="text-red-600">*</span> required field
+							</p>
 						</label>
 						<label
 							htmlFor="caseTitle"
@@ -118,6 +121,9 @@ const Submit = () => {
 								<option value="criminalDefense">Criminal Defense</option>
 								<option value="other">Other</option>
 							</select>
+							<p className="text-sm text-slate-600">
+								<span className="text-red-600">*</span> required field
+							</p>
 						</label>
 						<label
 							htmlFor="description"
@@ -135,6 +141,9 @@ const Submit = () => {
 								data-gramm={false}
 								spellCheck={false}
 							/>
+							<p className="text-sm text-slate-600">
+								<span className="text-red-600">*</span> required field
+							</p>
 						</label>
 						<label
 							htmlFor="name"
@@ -151,6 +160,9 @@ const Submit = () => {
 								placeholder="John Doe"
 								className="border border-slate-400/80 rounded-md text-base font-normal h-10 px-4   focus:outline focus:outline-slate-900"
 							/>
+							<p className="text-sm text-slate-600">
+								<span className="text-red-600">*</span> required field
+							</p>
 						</label>
 						<label
 							htmlFor="tel"
@@ -167,6 +179,9 @@ const Submit = () => {
 								placeholder="(+233)-000-000"
 								className="border border-slate-400/80 rounded-md text-base font-normal h-10 px-4   focus:outline focus:outline-slate-900"
 							/>
+							<p className="text-sm text-slate-600">
+								<span className="text-red-600">*</span> required field
+							</p>
 						</label>
 						<label
 							htmlFor="email"
@@ -183,6 +198,9 @@ const Submit = () => {
 								placeholder="email@example.com"
 								className="border border-slate-400/80 rounded-md text-base font-normal h-10 px-4   focus:outline focus:outline-slate-900"
 							/>
+							<p className="text-sm text-slate-600">
+								<span className="text-red-600">*</span> required field
+							</p>
 						</label>
 					</div>
 					<button
@@ -194,9 +212,6 @@ const Submit = () => {
 					<p className="text-sm text-slate-500">
 						Your information is kept confidential and will only be shared with
 						approved legal representatives and account managers.
-					</p>
-					<p>
-						<span className="text-red-600">*</span> required field
 					</p>
 				</form>
 				{showModal && (
@@ -268,6 +283,9 @@ const Submit = () => {
 								placeholder="Brief title describing your legal issue"
 								className="border border-slate-400/80 rounded-md text-base font-normal h-10 px-4 focus:outline focus:outline-slate-900"
 							/>
+							<p className="text-sm text-slate-600">
+								<span className="text-red-600">*</span> required field
+							</p>
 						</label>
 
 						<label
@@ -300,6 +318,9 @@ const Submit = () => {
 								<option value="criminalDefense">Criminal Defense</option>
 								<option value="other">Other</option>
 							</select>
+							<p className="text-sm text-slate-600">
+								<span className="text-red-600">*</span> required field
+							</p>
 						</label>
 
 						<label
@@ -318,6 +339,9 @@ const Submit = () => {
 								data-gramm="false"
 								spellCheck="false"
 							/>
+							<p className="text-sm text-slate-600">
+								<span className="text-red-600">*</span> required field
+							</p>
 						</label>
 
 						<label
