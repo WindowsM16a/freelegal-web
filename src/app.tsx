@@ -11,9 +11,7 @@ function App() {
 			<main className="flex-1">
 				<Hero />
 				<How />
-				<section id="who-we-serve">
-					<Who />
-				</section>
+				<Who />
 			</main>
 			<Footer />
 		</div>
