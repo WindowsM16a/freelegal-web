@@ -6,6 +6,7 @@ import Register from "../pages/register";
 import Hero from "../components/hero";
 import Submit from "../pages/submit";
 import FirmDashboard from "../pages/firmDashboard";
+import Who from "../components/who";
 
 const router = createBrowserRouter([
 	{
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
 	{
 		path: "/hero",
 		element: <Hero />,
+		errorElement: <NotFound />,
+	},
+	{
+		path: "/learnMore",
+		element: <Who />,
 		errorElement: <NotFound />,
 	},
 	{
