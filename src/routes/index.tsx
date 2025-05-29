@@ -5,7 +5,6 @@ import Login from "../pages/login";
 import Register from "../pages/register";
 import Hero from "../components/hero";
 import Submit from "../pages/submit";
-import AnonSubmit from "../pages/anonSubmit";
 import FirmDashboard from "../pages/firmDashboard";
 
 const router = createBrowserRouter([
@@ -32,11 +31,6 @@ const router = createBrowserRouter([
 	{
 		path: "/submit",
 		element: <Submit />,
-		errorElement: <NotFound />,
-	},
-	{
-		path: "/anonsubmit",
-		element: <AnonSubmit />,
 		errorElement: <NotFound />,
 	},
 	{
