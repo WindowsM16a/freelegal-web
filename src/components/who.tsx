@@ -2,7 +2,10 @@ import Card2 from "./ui/card2";
 
 const Who = () => {
 	return (
-		<div className="w-full pt-4 pb-28 flex flex-col items-center bg-slate-50">
+		<div
+			id="who-we-serve"
+			className="w-full pt-4 pb-28 flex flex-col items-center bg-slate-50"
+		>
 			<div
 				id="container"
 				className="w-full px-4 sm:px-7 md:px-7 lg:px-16 items-center flex flex-col gap-3"
