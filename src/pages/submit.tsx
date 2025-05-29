@@ -267,7 +267,7 @@ const Submit = () => {
 						</div>
 					</div>
 
-					<div id="inputs" className="w-full flex flex-col gap-6">
+					<div id="inputs" className="w-full flex flex-col gap-4">
 						<label
 							htmlFor="caseTitle"
 							className="flex flex-col text-lg font-semibold gap-2"
