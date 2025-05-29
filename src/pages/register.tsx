@@ -4,34 +4,17 @@ import { useEffect } from "react";
 const Register = () => {
 	const location = useLocation();
 
-	const handleClientRadio = () => {
-		const clientForm = document.getElementById("clientForm");
-		const volunteerForm = document.getElementById("volunteerForm");
-		const legalRepForm = document.getElementById("legalRepForm");
-		clientForm?.classList.remove("hidden");
-		clientForm?.classList.add("flex");
-		volunteerForm?.classList.remove("flex");
-		volunteerForm?.classList.add("hidden");
-		legalRepForm?.classList.remove("flex");
-		legalRepForm?.classList.add("hidden");
-	};
 	const handleVolunteerRadio = () => {
-		const clientForm = document.getElementById("clientForm");
 		const volunteerForm = document.getElementById("volunteerForm");
 		const legalRepForm = document.getElementById("legalRepForm");
-		clientForm?.classList.remove("flex");
-		clientForm?.classList.add("hidden");
 		volunteerForm?.classList.remove("hidden");
 		volunteerForm?.classList.add("flex");
 		legalRepForm?.classList.remove("flex");
 		legalRepForm?.classList.add("hidden");
 	};
 	const handleLegalRepRadio = () => {
-		const clientForm = document.getElementById("clientForm");
 		const volunteerForm = document.getElementById("volunteerForm");
 		const legalRepForm = document.getElementById("legalRepForm");
-		clientForm?.classList.remove("flex");
-		clientForm?.classList.add("hidden");
 		volunteerForm?.classList.remove("flex");
 		volunteerForm?.classList.add("hidden");
 		legalRepForm?.classList.remove("hidden");
@@ -63,13 +46,6 @@ const Register = () => {
 			) as HTMLInputElement | null;
 
 			if (lawFirm) lawFirm.checked = true;
-		}
-		if (location.state?.from === "heroReqAid") {
-			const requestAid = document.getElementById(
-				"client"
-			) as HTMLInputElement | null;
-
-			if (requestAid) requestAid.checked = true;
 		}
 		if (location.state?.from === "heroVolunteer") {
 			const requestAid = document.getElementById(
@@ -133,22 +109,6 @@ const Register = () => {
 							<p className="text-gray-900/80">I am registering as: </p>
 							<div>
 								<label
-									htmlFor="client"
-									className="flex gap-2 items-center hover:cursor-pointer"
-								>
-									<input
-										type="radio"
-										name="userType"
-										value="client"
-										id="client"
-										onClick={handleClientRadio}
-										className="mt-[0.1rem] hover:cursor-pointer accent-blue-900"
-									/>
-									Client seeking legal assistance
-								</label>
-							</div>
-							<div>
-								<label
 									htmlFor="volunteer"
 									className="flex gap-2 items-center hover:cursor-pointer"
 								>
@@ -179,65 +139,6 @@ const Register = () => {
 									Legal Representative
 								</label>
 							</div>
-						</div>
-						<div id="clientForm" className="flex flex-col gap-5 mt-3">
-							<label
-								htmlFor="name"
-								className="flex flex-col gap-2.5 text-gray-600 font-medium"
-							>
-								<span>
-									Full Name <span className="text-red-500">*</span>
-								</span>
-								<input
-									type="name"
-									name="name"
-									placeholder="John Doe"
-									className="border-[0.7px] border-gray-300 rounded-md h-10 lg:h-10  px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
-								/>
-							</label>
-							<label
-								htmlFor="email"
-								className="flex flex-col gap-2.5 text-gray-600 font-medium"
-							>
-								<span>
-									Email <span className="text-red-500">*</span>
-								</span>
-								<input
-									type="email"
-									name="email"
-									placeholder="name@example.com"
-									className="border-[0.7px] border-gray-300 rounded-md h-10 lg:h-10  px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
-								/>
-							</label>
-							<label
-								htmlFor="password"
-								className="flex flex-col gap-2.5 text-gray-600 font-medium"
-							>
-								<span>
-									Password <span className="text-red-500">*</span>
-								</span>
-								<input
-									type="password"
-									name="password"
-									placeholder="eg: **********"
-									className="border-[0.7px] border-gray-300 rounded-md h-10 lg:h-10 px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
-								/>
-							</label>
-							<label
-								htmlFor="password"
-								className="flex flex-col gap-2.5 text-gray-600 font-medium"
-							>
-								<span>
-									Confirm Password <span className="text-red-500">*</span>
-								</span>
-								<input
-									type="password"
-									name="password"
-									placeholder="eg: **********"
-									className="border-[0.3px] border-gray-300 rounded-md h-10 lg:h-10 px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800
-								"
-								/>
-							</label>
 						</div>
 						<div id="volunteerForm" className="hidden flex-col gap-5 mt-3">
 							<label

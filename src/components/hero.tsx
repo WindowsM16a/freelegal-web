@@ -2,11 +2,14 @@ import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
 	const navigate = useNavigate();
-	const handleRequestAid = () => {
+	const handleSubmitCase = () => {
 		navigate("/submit", { state: { from: "heroReqAid" } });
 	};
-	const handleVolunteer = () => {
-		navigate("/register", { state: { from: "heroVolunteer" } });
+	const handleLearnMore = () => {
+		const el = document.getElementById("who-we-serve");
+		if (el) {
+			el.scrollIntoView({ behavior: "smooth" });
+		}
 	};
 
 	return (
@@ -32,16 +35,16 @@ const Hero = () => {
 						className="flex flex-wrap w-full justify-center gap-5 mt-4"
 					>
 						<button
-							onClick={handleRequestAid}
+							onClick={handleSubmitCase}
 							className="w-fit py-2 px-5 text-blue-950 bg-yellow-400 text-lg font-semibold rounded-lg shadow-sm shadow-blue-900/40 hover:bg-yellow-400/90"
 						>
-							Request Legal Aid
+							Submit Case
 						</button>
 						<button
-							onClick={handleVolunteer}
+							onClick={handleLearnMore}
 							className="w-fit py-2 px-5 text-blue-900 bg-white text-lg font-semibold rounded-md shadow-sm shadow-blue-950/40 hover:bg-gray-200"
 						>
-							Volunteer as a Law Student
+							Learn More
 						</button>
 					</div>
 				</div>
