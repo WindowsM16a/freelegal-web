@@ -34,7 +34,7 @@
 	table,
 	tr,
 	thead {
-		@apply bg-yellow-600;
+		@apply bg-slate-100/50;
 	}
 }
 
