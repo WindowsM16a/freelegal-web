@@ -141,7 +141,7 @@ const Register = () => {
 								</label>
 							</div>
 						</div>
-						<div id="volunteerForm" className="flex flex-col gap-5 mt-3">
+						<div id="volunteerForm" className="flex flex-col gap-4 mt-3">
 							<label
 								htmlFor="name"
 								className="flex flex-col gap-2.5 text-gray-600 font-medium"
@@ -155,10 +155,13 @@ const Register = () => {
 									placeholder="John Doe"
 									className="border-[0.7px] border-gray-300 rounded-md h-10 lg:h-10  px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
 								/>
+								<p className="text-[0.81rem] text-slate-500">
+									<span className="text-red-600">*</span> required field
+								</p>
 							</label>
 							<label
 								htmlFor="email"
-								className="flex flex-col gap-2.5 text-gray-600 font-medium"
+								className="flex flex-col gap-2 text-gray-600 font-medium"
 							>
 								<span>
 									Email <span className="text-red-500">*</span>
@@ -169,10 +172,13 @@ const Register = () => {
 									placeholder="name@example.com"
 									className="border-[0.7px] border-gray-300 rounded-md h-10 lg:h-10  px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
 								/>
+								<p className="text-[0.81rem] text-slate-500">
+									<span className="text-red-600">*</span> required field
+								</p>
 							</label>
 							<label
 								htmlFor="password"
-								className="flex flex-col gap-2.5 text-gray-600 font-medium"
+								className="flex flex-col gap-2 text-gray-600 font-medium"
 							>
 								<span>
 									Password <span className="text-red-500">*</span>
@@ -183,10 +189,13 @@ const Register = () => {
 									placeholder="eg: **********"
 									className="border-[0.7px] border-gray-300 rounded-md h-10 lg:h-10 px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
 								/>
+								<p className="text-[0.81rem] text-slate-500">
+									<span className="text-red-600">*</span> required field
+								</p>
 							</label>
 							<label
 								htmlFor="password"
-								className="flex flex-col gap-2.5 text-gray-600 font-medium"
+								className="flex flex-col gap-2 text-gray-600 font-medium"
 							>
 								<span>
 									Confirm Password <span className="text-red-500">*</span>
@@ -198,10 +207,13 @@ const Register = () => {
 									className="border-[0.3px] border-gray-300 rounded-md h-10 lg:h-10 px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800
 								"
 								/>
+								<p className="text-[0.81rem] text-slate-500">
+									<span className="text-red-600">*</span> required field
+								</p>
 							</label>
 							<label
 								htmlFor="schoolName"
-								className="flex flex-col gap-2.5 text-gray-600 font-medium"
+								className="flex flex-col gap-2 text-gray-600 font-medium"
 							>
 								School Name (optional)
 								<input
@@ -213,10 +225,10 @@ const Register = () => {
 								/>
 							</label>
 						</div>
-						<div id="legalRepForm" className="hidden flex-col gap-5 mt-3">
+						<div id="legalRepForm" className="hidden flex-col gap-4 mt-3">
 							<label
 								htmlFor="name"
-								className="flex flex-col gap-2.5 text-gray-600 font-medium"
+								className="flex flex-col gap-2 text-gray-600 font-medium"
 							>
 								<span>
 									Full Name <span className="text-red-500">*</span>
@@ -228,10 +240,13 @@ const Register = () => {
 									placeholder="John Doe"
 									className="border-[0.7px] border-gray-300 rounded-md h-10 lg:h-10  px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
 								/>
+								<p className="text-[0.81rem] text-slate-500">
+									<span className="text-red-600">*</span> required field
+								</p>
 							</label>
 							<label
 								htmlFor="email"
-								className="flex flex-col gap-2.5 text-gray-600 font-medium"
+								className="flex flex-col gap-2 text-gray-600 font-medium"
 							>
 								<span>
 									Email <span className="text-red-500">*</span>
@@ -243,10 +258,13 @@ const Register = () => {
 									placeholder="name@example.com"
 									className="border-[0.7px] border-gray-300 rounded-md h-10 lg:h-10  px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
 								/>
+								<p className="text-[0.81rem] text-slate-500">
+									<span className="text-red-600">*</span> required field
+								</p>
 							</label>
 							<label
 								htmlFor="password"
-								className="flex flex-col gap-2.5 text-gray-600 font-medium"
+								className="flex flex-col gap-2 text-gray-600 font-medium"
 							>
 								<span>
 									Password <span className="text-red-500">*</span>
@@ -258,10 +276,13 @@ const Register = () => {
 									placeholder="eg: **********"
 									className="border-[0.7px] border-gray-300 rounded-md h-10 lg:h-10 px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800"
 								/>
+								<p className="text-[0.81rem] text-slate-500">
+									<span className="text-red-600">*</span> required field
+								</p>
 							</label>
 							<label
 								htmlFor="password"
-								className="flex flex-col gap-2.5 text-gray-600 font-medium"
+								className="flex flex-col gap-2 text-gray-600 font-medium"
 							>
 								<span>
 									Confirm Password <span className="text-red-500">*</span>
@@ -274,6 +295,9 @@ const Register = () => {
 									className="border-[0.3px] border-gray-300 rounded-md h-10 lg:h-10 px-3 font-normal text-black focus:outline focus:outline-1 focus:outline-blue-800
 								"
 								/>
+								<p className="text-[0.81rem] text-slate-500">
+									<span className="text-red-600">*</span> required field
+								</p>
 							</label>
 							<div id="firmOrIndividual" className="flex gap-2">
 								<label
@@ -328,9 +352,6 @@ const Register = () => {
 						>
 							Register
 						</button>
-						<p>
-							<span className="text-red-600">*</span> required field
-						</p>
 					</form>
 					<span className="text-sm mt-2">
 						Already have an account?{" "}
