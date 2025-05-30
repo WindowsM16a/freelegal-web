@@ -117,6 +117,7 @@ const Register = () => {
 										name="userType"
 										value="volunteer"
 										id="volunteer"
+										defaultChecked={true}
 										onClick={handleVolunteerRadio}
 										className="mt-[0.1rem] hover:cursor-pointer accent-blue-900"
 									/>
@@ -140,7 +141,7 @@ const Register = () => {
 								</label>
 							</div>
 						</div>
-						<div id="volunteerForm" className="hidden flex-col gap-5 mt-3">
+						<div id="volunteerForm" className="flex flex-col gap-5 mt-3">
 							<label
 								htmlFor="name"
 								className="flex flex-col gap-2.5 text-gray-600 font-medium"
