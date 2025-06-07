@@ -7,6 +7,9 @@ import Hero from "../components/hero";
 import Submit from "../pages/submit";
 import FirmDashboard from "../pages/firmDashboard";
 import Who from "../components/who";
+import News from "../pages/news";
+import { Contact } from "lucide-react";
+import ManagerDash from "../pages/managerDash";
 
 const router = createBrowserRouter([
 	{
@@ -42,6 +45,21 @@ const router = createBrowserRouter([
 	{
 		path: "/firmdashboard",
 		element: <FirmDashboard />,
+		errorElement: <NotFound />,
+	},
+	{
+		path: "/managerdashboard",
+		element: <ManagerDash />,
+		errorElement: <NotFound />,
+	},
+	{
+		path: "/news",
+		element: <News />,
+		errorElement: <NotFound />,
+	},
+	{
+		path: "/contact",
+		element: <Contact />,
 		errorElement: <NotFound />,
 	},
 ]);
