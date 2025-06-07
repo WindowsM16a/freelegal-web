@@ -1,7 +1,8 @@
 import React from "react";
-import { FileSearch, FileText, Briefcase } from "lucide-react";
+import { FileText } from "lucide-react";
+import Footer from "../components/footer";
 
-// type defs for sanity. typescript your mama
+// type defs
 interface Case {
 	id: number;
 	title: string;
@@ -9,6 +10,13 @@ interface Case {
 	date: string;
 	status: "New" | "In Progress";
 	interestExpressed: boolean;
+}
+
+interface LeaderboardEntry {
+	rank: number;
+	firm: string;
+	points: number;
+	cases: number;
 }
 
 // dummy data
@@ -47,7 +55,14 @@ const cases: Case[] = [
 	},
 ];
 
-// status badge wrapper
+const leaderboardData: LeaderboardEntry[] = [
+	{ rank: 1, firm: "Justice Warriors LLP", points: 120, cases: 8 },
+	{ rank: 2, firm: "Pro Bono Pros", points: 98, cases: 6 },
+	{ rank: 3, firm: "Legal Aid Bros", points: 76, cases: 5 },
+	{ rank: 4, firm: "Community Counsel", points: 60, cases: 4 },
+];
+
+// status badge
 const StatusBadge: React.FC<{ status: "New" | "In Progress" }> = ({
 	status,
 }) => {
@@ -65,14 +80,14 @@ const StatusBadge: React.FC<{ status: "New" | "In Progress" }> = ({
 	);
 };
 
-// the table itself, reused across both tabs
 const CaseTable: React.FC<{ data: Case[] }> = ({ data }) => (
 	<div className="w-full flex flex-col">
 		<div className="text-2xl font-semibold my-4 font-[inter]">
 			{data.length > 0 && data.every((c) => c.interestExpressed)
-				? "Cases You've Expressed Interest In"
+				? "Cases You've Assigned"
 				: "Available Pro Bono Cases"}
 		</div>
+
 		<div className="w-full p-4 rounded-md border border-slate-300 overflow-x-auto">
 			<table className="w-full divide-y divide-gray-200">
 				<thead className="bg-gray-50">
@@ -130,6 +145,72 @@ const CaseTable: React.FC<{ data: Case[] }> = ({ data }) => (
 	</div>
 );
 
+const LeaderBoard: React.FC<{ data: LeaderboardEntry[] }> = ({ data }) => {
+	const sorted = [...data].sort((a, b) => b.points - a.points);
+
+	return (
+		<div className="w-full flex flex-col my-20">
+			<p className="text-xl font-semibold my-4 font-[inter]">Leaderboard</p>
+			<div className="w-full p-4 rounded-md border border-slate-300 overflow-x-auto">
+				<table className="w-full divide-y divide-gray-200">
+					<thead className="bg-gray-50">
+						<tr>
+							{["Rank", "Firm", "Points", "Cases"].map((h) => (
+								<th
+									key={h}
+									className="px-6 py-3 text-left text-sm font-bold text-gray-700"
+								>
+									{h}
+								</th>
+							))}
+						</tr>
+					</thead>
+					<tbody className="divide-y divide-gray-200 bg-white">
+						{sorted.map((entry) => (
+							<tr key={entry.rank}>
+								<td className="px-6 py-4 text-sm text-gray-800 font-extrabold whitespace-nowrap">
+									#{entry.rank}
+								</td>
+								<td className="px-6 py-4 text-sm font-medium text-gray-900 whitespace-normal">
+									{entry.firm}
+								</td>
+								<td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+									{entry.points}
+								</td>
+								<td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+									{entry.cases}
+								</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+
+			<div className="mt-6 p-4 rounded-md border border-slate-300 bg-gray-50">
+				<h3 className="text-lg font-semibold mb-2">How to Earn Points</h3>
+				<ul className="list-disc pl-5 text-sm text-gray-800 space-y-1">
+					<li>
+						<span className="font-medium text-green-700">+100 points:</span>{" "}
+						Successfully completing a pro bono case
+					</li>
+					<li>
+						<span className="font-medium text-green-700">+25 points:</span>{" "}
+						Expressing interest in a case
+					</li>
+					<li>
+						<span className="font-medium text-green-700">+50 points:</span> Each
+						month of ongoing representation
+					</li>
+					<li>
+						<span className="font-medium text-green-700">+10 points:</span> For
+						each referral to another lawyer when you can't take a case
+					</li>
+				</ul>
+			</div>
+		</div>
+	);
+};
+
 const ManagerDashboard: React.FC = () => {
 	const [selectedTab, setSelectedTab] = React.useState<
 		"available" | "assigned"
@@ -137,49 +218,50 @@ const ManagerDashboard: React.FC = () => {
 
 	const availableCases = cases.filter((c) => !c.interestExpressed);
 	const assignedCases = cases.filter((c) => c.interestExpressed);
-
 	const showCases =
 		selectedTab === "available" ? availableCases : assignedCases;
 
 	return (
 		<>
-			{/* navbar */}
 			<nav className="w-full h-16 bg-blue-900 text-white items-center justify-between flex px-8 lg:px-20 fixed top-0 left-0 z-50 border-b-4 border-white">
 				<a href="/" className="text-xl font-bold">
 					<img src="/" alt="freelegal logo" />
 				</a>
 			</nav>
 
-			<div className="w-full flex flex-col mt-20 justify-start px-8 py-4">
-				<div className="flex flex-col gap-2">
-					<h1 className="text-3xl font-[649]">Case Portal</h1>
-					<p className="text-slate-600">Browse and assign in cases</p>
+			<div className="w-full flex flex-col mt-20 px-8 py-4">
+				<div className="flex flex-col gap-2 mb-4">
+					<h1 className="text-3xl font-bold">Case Portal</h1>
+					<p className="text-slate-600">Manage and assign pro bono cases.</p>
 				</div>
 
-				{/* tabs */}
-				<div className="tabContainer flex gap-2 mt-4">
+				<div className="flex gap-4 mb-6">
 					<button
 						onClick={() => setSelectedTab("available")}
-						className={`tabName ${
-							selectedTab === "available" ? "bg-white border shadow-sm" : ""
+						className={`px-4 py-2 text-sm font-medium rounded-md ${
+							selectedTab === "available"
+								? "bg-blue-600 text-white"
+								: "bg-gray-100 text-gray-700"
 						}`}
 					>
-						<FileSearch className="w-4" /> Available Cases
+						Available
 					</button>
 					<button
 						onClick={() => setSelectedTab("assigned")}
-						className={`tabName ${
-							selectedTab === "assigned" ? "bg-white border shadow-sm" : ""
+						className={`px-4 py-2 text-sm font-medium rounded-md ${
+							selectedTab === "assigned"
+								? "bg-blue-600 text-white"
+								: "bg-gray-100 text-gray-700"
 						}`}
 					>
-						<Briefcase className="w-4" /> Assigned Cases
+						Assigned
 					</button>
 				</div>
 
-				<div className="mt-4">
-					<CaseTable data={showCases} />
-				</div>
+				<CaseTable data={showCases} />
+				<LeaderBoard data={leaderboardData} />
 			</div>
+			<Footer />
 		</>
 	);
 };
