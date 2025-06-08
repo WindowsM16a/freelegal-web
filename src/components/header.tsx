@@ -15,6 +15,10 @@ const Header = () => {
 	// 	navigate("/contact")
 	// };
 
+	// const toNews = () => {
+	// 	navigate("/news")
+	// };
+
 	return (
 		<div className="w-screen">
 			<nav className="w-full h-16 bg-blue-900 text-white items-center justify-between flex px-8 lg:px-20 fixed top-0 left-0 z-50  shadow-[0_1.5px_4px_-1px_rgba(255,255,255,0.3)]">
