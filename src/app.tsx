@@ -59,7 +59,7 @@ function App() {
 					</div>
 				</div>
 				<div id="firstToKnow">
-					<form className="bg-white px-8 py-8 max-w-screen flex flex-col items-center justify-center text-center rounded-xl gap-6 mb-4">
+					<form className="bg-white px-8 py-8 w-fit lg:max-w-screen flex flex-col items-center justify-center text-center rounded-xl gap-6 mb-4">
 						<p className="text-2xl font-bold">Be the first to know</p>
 						<p>
 							Join our waiting list and get notified when Freelegal launches
@@ -68,9 +68,9 @@ function App() {
 							<input
 								type="email"
 								placeholder="Enter your email address"
-								className="h-10 border border-brand-blue focus:border-brand-blue outline-brand-blue rounded-md p-4"
+								className="w-[10rem] h-10 border border-brand-blue focus:border-brand-blue outline-brand-blue rounded-md p-4"
 							/>
-							<button className="text-brand-blue text-base font-semibold bg-brand-gold py-1 px-3.5 rounded-3xl">
+							<button className="text-brand-blue text-base font-medium bg-brand-gold py-0.5 px-3 rounded-3xl">
 								Notify Me
 							</button>
 						</div>
