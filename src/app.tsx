@@ -23,60 +23,54 @@ function App() {
 				</div>
 				<div
 					id="whatIsFreelegal"
-					className="bg-white px-12 py-16 w-full flex flex-col items-center justify-center text-center rounded-xl gap-8"
+					className="bg-white px-6 py-16 w-fit flex flex-col items-center justify-center text-center rounded-xl gap-4"
 				>
-					<p className="text-3xl font-bold ">
+					<p className="text-3xl font-bold">
 						Revolutionizing Legal Connections
 					</p>
-					<p className="text-slate-500 text-wrap">
-						Freelegal is the premier platform that seamlessly connects clients
-						seeking legal representation with qualified law firms and expert
-						account managers.
-					</p>
-					<span className="mt-7 flex flex-col items-center gap-2">
-						<span className="w-fit h-fit bg-blue-50/70 p-4 rounded-full">
-							<SlPeople size={34} />
-						</span>
-						<p className="text-xl font-semibold">For Clients</p>
-						<p className="text-slate-600">
-							Submit your legal cases and get matched with the right law firms
-							for your specific needs.
+					<span className="w-[85%] mb-8">
+						<p className="text-slate-500 text-wrap text-[1.2rem]">
+							Freelegal is the premier platform that seamlessly connects clients
+							seeking legal representation with qualified law firms and expert
+							account managers.
 						</p>
 					</span>
-					<span className="mt-7 flex flex-col items-center gap-2">
-						<span className="w-fit h-fit bg-blue-50/70 p-4 rounded-full">
-							<SlPeople size={34} />
+					<div className="flex flex-wrap items-center justify-center gap-16 mb-8">
+						<span className="mt-7 flex flex-col items-center gap-2 w-[18rem] lg:w-[25rem]">
+							<span className="w-fit h-fit bg-blue-50/70 p-4 rounded-full">
+								<SlPeople size={34} />
+							</span>
+							<p className="text-xl font-semibold">For Clients</p>
+							<p className="text-slate-600">
+								Submit your legal cases and get matched with the right law firms
+								for your specific needs.
+							</p>
 						</span>
-						<p className="text-xl font-semibold">For Law Firms</p>
-						<p className="text-slate-600">
-							Access a curated stream of potential clients and grow your
-							practice with quality cases.
-						</p>
-					</span>
-					<span className="mt-7 flex flex-col items-center gap-2">
-						<span className="w-fit h-fit bg-blue-50/70 p-4 rounded-full">
-							<SlPeople size={34} />
+						<span className="mt-7 flex flex-col items-center gap-2 w-[18rem] lg:w-[25rem]">
+							<span className="w-fit h-fit bg-blue-50/70 p-4 rounded-full">
+								<SlPeople size={34} />
+							</span>
+							<p className="text-xl font-semibold">Smart Matching</p>
+							<p className="text-slate-600">
+								Our intelligent system ensures the perfect match between clients
+								and legal expertise.
+							</p>
 						</span>
-						<p className="text-xl font-semibold">Smart Matching</p>
-						<p className="text-slate-600">
-							Our intelligent system ensures the perfect match between clients
-							and legal expertise.
-						</p>
-					</span>
+					</div>
 				</div>
 				<div id="firstToKnow">
-					<form className="bg-white px-12 py-16 min-w-full flex flex-col items-center justify-center text-center rounded-xl gap-8 mb-4">
+					<form className="bg-white px-8 py-8 max-w-screen flex flex-col items-center justify-center text-center rounded-xl gap-6 mb-4">
 						<p className="text-2xl font-bold">Be the first to know</p>
 						<p>
 							Join our waiting list and get notified when Freelegal launches
 						</p>
-						<div className="flex gap-2">
+						<div className="flex gap-6">
 							<input
 								type="email"
 								placeholder="Enter your email address"
 								className="h-10 border border-brand-blue focus:border-brand-blue outline-brand-blue rounded-md p-4"
 							/>
-							<button className="text-brand-blue text-base font-semibold bg-brand-gold py-1 px-2.5 rounded-3xl">
+							<button className="text-brand-blue text-base font-semibold bg-brand-gold py-1 px-3.5 rounded-3xl">
 								Notify Me
 							</button>
 						</div>
